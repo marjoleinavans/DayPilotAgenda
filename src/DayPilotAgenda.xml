@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    id="avans.daypilotagenda.DayPilotAgenda"
+    pluginWidget="true"
+    needsEntityContext="true"
+    offlineCapable="true"
+    supportedPlatform="Web"
+    xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+
+    <name>Day Pilot</name>
+    <description>An Outlook-like agenda to show appointments</description>
+    <icon />
+
+    <properties>
+
+        <propertyGroup caption="Data">
+
+            <property
+                key="agendaItems"
+                type="datasource"
+                isList="true"
+                required="true">
+                <caption>Agenda items</caption>
+                <description>Agenda items to display</description>
+            </property>
+
+            <property
+                key="titleAttribute"
+                type="attribute"
+                required="true"
+                dataSource="agendaItems">
+                <caption>Title</caption>
+                <description>Attribute containing the agenda item title</description>
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
+
+            <property
+                key="startAttribute"
+                type="attribute"
+                required="true"
+                dataSource="agendaItems">
+                <caption>Start date/time</caption>
+                <description>Attribute containing the start date/time</description>
+                <attributeTypes>
+                    <attributeType name="DateTime" />
+                </attributeTypes>
+            </property>
+
+            <property
+                key="endAttribute"
+                type="attribute"
+                required="true"
+                dataSource="agendaItems">
+                <caption>End date/time</caption>
+                <description>Attribute containing the end date/time</description>
+                <attributeTypes>
+                    <attributeType name="DateTime" />
+                </attributeTypes>
+            </property>
+
+            <property
+                key="typeAttribute"
+                type="attribute"
+                required="true"
+                dataSource="agendaItems">
+                <caption>Type</caption>
+                <description>Attribute containing the agenda item type</description>
+                <attributeTypes>
+                     <attributeType name="Enum" />
+                 </attributeTypes>
+            </property>
+
+        </propertyGroup>
+
+    </properties>
+
+</widget>
